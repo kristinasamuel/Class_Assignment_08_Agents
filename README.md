@@ -34,6 +34,3 @@ Create a customer support bot using OpenAI's Agent SDK that can handle basic FAQ
    ```
    uv run main.py
    ```
-   ```
-
-"# Class_Assignment_08_Agents" 

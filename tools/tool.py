@@ -10,14 +10,14 @@ from agents import  function_tool
 @function_tool
 def is_enabled(query: str) -> bool:
     """Enable this tool only for queries related to orders."""
-    print("<<<<<<<<<<<<<<<< Get Order Status Tool Enabled >>>>>>>>>>>>>>>>>")
+    # print("<<<<<<<<<<<<<<<< Get Order Status Tool Enabled >>>>>>>>>>>>>>>>>")
     return "order" in query.lower()
 
 # Tool 2: Get order status
 @function_tool
 def get_order_status(order_id: str):
     """Fetch the status of an order given its ID."""
-    print("<<<<<<<<<<<<<<<< Get Order Status Called >>>>>>>>>>>>>>>>>")
+    # print("<<<<<<<<<<<<<<<< Get Order Status Called >>>>>>>>>>>>>>>>>")
     orders = {
          "01": "Shipped - Expected delivery in 24 hours",
          "02": "Processing - Will ship in tomorrow morning",
@@ -32,5 +32,5 @@ def get_order_status(order_id: str):
 @function_tool
 def error_function(order_id: str):
     """Return a friendly error message."""
-    print("<<<<<<<<<<<<<<<< Get Order Status Error Function Called >>>>>>>>>>>>>>>>>>>>")
+    # print("<<<<<<<<<<<<<<<< Get Order Status Error Function Called >>>>>>>>>>>>>>>>>>>>")
     return {"error": f"Sorry, we couldn't find any details for Order ID {order_id}."}

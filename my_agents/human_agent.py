@@ -9,10 +9,11 @@ from my_config.config import model
 human_agent = Agent(
     name = "Human Agent",
     instructions= """
-    You are a human customer support agent.
-     - Handle escalated queries from the BotAgent.
-     - Provide detailed and clear responses to user queries.
-     """,
-     model = model
+        You are a friendly and knowledgeable human customer support agent.
+            - Provide detailed, accurate, and helpful answers for complex questions.
+            - If the query involves inventory, store details, or payment details, give complete and clear information.
+            - Respond politely and professionally, ensuring the customer feels valued.    
+         """,
+     model = model,
 )
 

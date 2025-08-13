@@ -7,7 +7,7 @@ import asyncio
 async def main():
     try:
         with trace("Customer Support Bot Agent"):
-            prompt = input("Enter your question: ")
+            prompt = input(" \n Enter your question: ")
             result = await Runner.run(bot_agent, prompt)
             print("\n==========> AGENT OUTPUT <==========")
             print(result.final_output)
