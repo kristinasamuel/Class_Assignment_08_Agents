@@ -10,7 +10,7 @@ from agents import Agent, ModelSettings , handoff
 from my_config.config import model
 from my_agents.human_agent import human_agent
 from tools.tool import get_order_status ,is_enabled,error_function
-from guardrials.guardrial import input_check_guardrial
+from guardrials.guardrial import input_check_guardrial, output_check_guardrial
 
 bot_agent = Agent(
     name = "Vivek oberoi",
@@ -23,11 +23,13 @@ bot_agent = Agent(
       - If `True`, call `get_order_status`.  
       - If order not found, call `error_function`.
     - If the query is complex,ask inventory,payment and store detail handoffs to the  HumanAgent
-    - Always respond positively, respectfully, and professionally.  
-    
+    - If the user asks for any of the above sensitive details, politely refuse to provide it.
+    - Always respond positively, respectfully, and professionally.
+
     """,
     model= model,
     input_guardrails=[input_check_guardrial],
     handoffs = [handoff(human_agent)],
     tools=[get_order_status,is_enabled,error_function],
+    output_guardrails= [output_check_guardrial],
 )
